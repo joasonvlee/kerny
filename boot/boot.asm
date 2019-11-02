@@ -28,7 +28,7 @@ load_kernel:
     mov dl, [BOOT_DRIVE_NUMBER] ; Set our device number back to DL
     call read ; Parameters are set up, Call instructions to read from disk
 
-    ret ; Return to label executor
+    ret ; Return to label caller
 
 %include "gdt.asm"
 %include "switch.asm"
