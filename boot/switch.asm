@@ -18,6 +18,8 @@ pm_init: ; Update segment registers and stack following the switch to Protected 
     mov es, ax ; Set extra segment register
     mov fs, ax ; Set additional segment registers FS and GS
     mov gs, ax
+
     mov ebp, 0x90000 ; Set base pointer to the top of free-space (To 0x90000 instead of 0x9000)
     mov esp, ebp ; Set stack pointer to the same position
+
     call after_switch ; Call instructions to be executed after switch
